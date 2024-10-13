@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>لعبة تخمين الأرقام</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+        body {
+            background-image: url("./starry-night-sky-reflection-background-hd-wallpaper-sr10012425-1705222416280-cover.webp");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .game_box {
+            position: relative;
+            width: 450px;
+            backdrop-filter: blur(25px);
+            border: 2px solid #c6c3c3;
+            border-radius: 15px;
+            padding: 2.5em;
+            color: white;
+            box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+        }
+        .game-header {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #c6c3c3;
+            width: 170px;
+            height: 70px;
+            border-radius: 0 0 20px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .game-header span {
+            font-size: 30px;
+            color: black;
+        }
+        .input_box {
+            position: relative;
+            margin: 20px 0;
+        }
+        .input-field {
+            width: 100%;
+            height: 55px;
+            font-size: 16px;
+            background: transparent;
+            color: white;
+            padding: 0 20px;
+            border: 2px solid #cac3c3;
+            border-radius: 30px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .label {
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            transition: 0.2s;
+            border-radius: 12px;
+        }
+        .input-field:focus ~ .label,
+        .input-field:valid ~ .label {
+            top: -10px;
+            font-size: 14px;
+            background-color: #c6c3c3;
+            color: black;
+            padding: 0 10px;
+        }
+        .input-submit {
+            width: 100%;
+            height: 50px;
+            background: #ececec;
+            font-size: 16px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .input-submit:hover {
+            background: #d1d1d1;
+        }
+        #message {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="game_box">
+            <div class="game-header">
+                <span>تخمين الرقم</span>
+            </div>
+            <div class="input_box mt-5">
+                <input type="text" id="guess" class="input-field" required>
+                <label for="guess" class="label">أدخل تخمينك</label>
+            </div>
+            <div class="input_box">
+                <input type="submit" class="input-submit" value="تخمين" id="submit">
+            </div>
+            <div id="message"></div>
+        </div>
+    </div>
+
+<script src=".//num.js"></script>
+</body>
+</html>
+
+
+
+<!-- لشرح:
+إعلان المستند: <!DOCTYPE html> يحدد أن هذا مستند HTML5.
+تحديد اللغة: <html lang="ar"> يشير إلى أن المحتوى باللغة العربية.
+الوسوم الرأسية:
+<meta charset="UTF-8">: يحدد ترميز الأحرف.
+<meta name="viewport" content="width=device-width, initial-scale=1.0">: يجعل التصميم متجاوبًا.
+إضافة Bootstrap: باستخدام رابط CSS لBootstrap لتحسين مظهر الصفحة.
+تخصيص الأنماط: تم استخدام <style> لتخصيص تصميم الخلفية، الحدود، والألوان.
+الهيكل الأساسي:
+العنوان: h1 يعرض عنوان اللعبة.
+حقل الإدخال: <input> يسمح للاعب بإدخال تخمينه.
+زر التقديم: <button> لتقديم التخمين.
+رسالة النتائج: <p id="message"> لعرض الملاحظات للاعب -->
